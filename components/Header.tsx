@@ -8,10 +8,10 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="bg-white border-b sticky top-0 z-40">
+    <header className="fixed inset-x-0 top-0 z-40 bg-white border-b">
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
         <Link href="/" className="flex items-center gap-3">
-          <Image src={one8Logo} alt="One8 Accounting" className="h-8 w-auto" />
+          <Image src={one8Logo} alt="One8 Accounting" width={120} height={32} className="h-8 w-auto" />
           <span className="font-semibold text-lg">One8 Accounting</span>
         </Link>
 
