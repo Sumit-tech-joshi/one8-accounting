@@ -1,4 +1,3 @@
-import Link from "next/link";
 import {
   BookOpenCheck,
   Users2,
@@ -53,8 +52,7 @@ export default function ServicesGrid() {
       {services.map((s) => {
         const Icon = s.icon;
         return (
-          <Link
-            href={s.href}
+          <div
             key={s.title}
             className="p-6 bg-white border rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
           >
@@ -74,7 +72,7 @@ export default function ServicesGrid() {
                 {s.desc}
               </p>
             </div>
-          </Link>
+          </div>
         );
       })}
     </div>
