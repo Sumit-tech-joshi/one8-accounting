@@ -1,0 +1,47 @@
+"use client";
+import Link from "next/link";
+import { useState } from "react";
+import Image from 'next/image'
+import one8Logo from "../public/one8.png"
+
+export default function Header() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <header className="bg-white border-b sticky top-0 z-40">
+      <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
+        <Link href="/" className="flex items-center gap-3">
+          <Image src={one8Logo} alt="One8 Accounting" className="h-8 w-auto" />
+          <span className="font-semibold text-lg">One8 Accounting</span>
+        </Link>
+
+        <nav className="hidden md:flex items-center gap-6 text-sm">
+          {/* <Link href="/about" className="hover:underline">About</Link>
+          <Link href="/services" className="hover:underline">Services</Link>
+          <Link href="/resources" className="hover:underline">Resources</Link> */}
+          {/* <Link href="/contact" className="text-white bg-slate-900 px-4 py-2 rounded">Contact</Link> */}
+        </nav>
+
+        <button
+          aria-label="Menu"
+          className="md:hidden p-2 rounded hover:bg-slate-100"
+          onClick={() => setOpen((v) => !v)}
+        >
+          <svg width="24" height="24" fill="none" stroke="currentColor"><path strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+
+      {/* Mobile menu */}
+      {open && (
+        <div className="md:hidden border-t">
+          <div className="px-6 py-4 flex flex-col gap-3">
+            {/* <Link href="/about">About</Link>
+            <Link href="/services">Services</Link>
+            <Link href="/resources">Resources</Link> */}
+            <Link href="/contact" className="font-medium">Contact</Link>
+          </div>
+        </div>
+      )}
+    </header>
+  );
+}
