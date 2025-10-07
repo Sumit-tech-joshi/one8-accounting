@@ -1,3 +1,4 @@
+'use client'
 import {
   BookOpenCheck,
   Users2,
@@ -6,6 +7,7 @@ import {
   FileText,
   BookKey
 } from "lucide-react";
+import React, { useRef } from 'react';
 
 const services = [
   {
@@ -48,33 +50,22 @@ const services = [
 
 export default function ServicesGrid() {
   return (
-    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    // Add id and tabIndex so it can be targeted and focused
+    <section id="services" tabIndex={-1} className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {services.map((s) => {
         const Icon = s.icon;
         return (
-          <div
-            key={s.title}
-            className="p-6 bg-white border rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
-          >
+          <div key={s.title} className="p-6 bg-white border rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
             <div className="flex flex-col items-start">
-              {/* Icon */}
               <div className="mb-4 p-3 bg-blue-50 text-blue-600 rounded-xl">
-                <Icon  size={28} strokeWidth={1.8} />
+                <Icon size={28} strokeWidth={1.8} />
               </div>
-
-              {/* Title */}
-              <h3 className="text-xl font-semibold mb-2 text-gray-900">
-                {s.title}
-              </h3>
-
-              {/* Description */}
-              <p className="text-gray-600 text-sm leading-relaxed">
-                {s.desc}
-              </p>
+              <h3 className="text-xl font-semibold mb-2 text-gray-900">{s.title}</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">{s.desc}</p>
             </div>
           </div>
         );
       })}
-    </div>
+    </section>
   );
 }
