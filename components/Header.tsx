@@ -44,15 +44,15 @@ export default function Header() {
         </Link>
 
         <nav className="hidden md:flex items-center gap-6 text-sm">
-          <div className="hover:underline" onClick={scrollToServices}>
+          <div className="hover:underline cursor-pointer" onClick={scrollToServices}>
             Services
           </div>
-          <Link href="/about" className="hover:underline">
+          <Link href="/about" className="hover:underline cursor-pointer">
             About
           </Link>
           <Link
             href="/contact"
-            className="text-white bg-slate-900 px-4 py-2 rounded"
+            className="text-white bg-slate-900 px-4 py-2 rounded cursor-pointer"
           >
             Contact
           </Link>

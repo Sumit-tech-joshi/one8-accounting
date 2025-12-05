@@ -21,7 +21,7 @@ export async function GET() {
 }
 
 export async function POST(req: Request) {
-  // ✅ cookies() is synchronous in App Router
+  // cookies() is synchronous in App Router
   
   const cookieStore = await cookies()
   const token = cookieStore.get("one8_session")?.value ?? null;
