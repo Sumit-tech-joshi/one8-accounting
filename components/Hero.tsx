@@ -1,5 +1,5 @@
 import Image from "next/image";
-import HeroImage from "../public/hero.png";
+import HeroImage from "../public/home01.webp";
 
 export default function Hero() {
   return (
@@ -12,13 +12,13 @@ export default function Hero() {
             <span className="text-slate-700">that scale</span> with your
             business
           </h1>
-          <p className="mt-4 text-gray-600 max-w-xl">
+          <p className="mt-28 text-gray-600 max-w-xl">
             Dedicated financial operations — bookkeeping, payroll,
             controllership and CFO services — so you can focus on growth without
             hiring a full-time finance team.
           </p>
 
-          <div className="mt-6">
+          <div className="mt-8">
             <a
               href="/contact"
               className="inline-block bg-slate-900 text-white px-5 py-3 rounded shadow hover:bg-slate-800 transition"
