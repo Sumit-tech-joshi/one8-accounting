@@ -111,15 +111,15 @@ export default function Footer() {
       </div>
 
       <div className="bg-slate-50">
-        <div className="max-w-7xl mx-auto px-6 py-4 text-sm text-slate-600 flex flex-col md:flex-row justify-between items-center gap-3">
+        <div className="max-w-7xl mx-auto px-6 py-4 text-sm text-slate-600 flex flex-col justify-between items-center gap-3">
           <div>© {new Date().getFullYear()} One8 Accounting. All rights reserved.</div>
-          <div className="flex items-center gap-4">
+          {/* <div className="flex items-center gap-4">
             <Link href="/privacy" className="hover:underline">Privacy</Link>
             <span className="hidden md:inline text-slate-300">·</span>
             <Link href="/terms" className="hover:underline">Terms</Link>
             <span className="hidden md:inline text-slate-300">·</span>
             <Link href="/sitemap.xml" className="hover:underline">Sitemap</Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>
