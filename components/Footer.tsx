@@ -97,10 +97,10 @@ export default function Footer() {
               <Mail className="w-4 h-4 text-slate-700" />
               <a href="mailto:vipin@one8accounting.com" className="hover:underline">vipin@one8accounting.com </a>
             </li>
-            <li className="flex items-center gap-3">
+            {/* <li className="flex items-center gap-3">
               <Phone className="w-4 h-4 text-slate-700" />
               <a href="tel:+1234567890" className="hover:underline">+1 (111) 111111</a>
-            </li>
+            </li> */}
             <li className="flex items-center gap-3">
               <MapPin className="w-4 h-4 text-slate-700" />
               <span>Vancouver, BC</span>
