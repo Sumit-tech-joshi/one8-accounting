@@ -19,27 +19,6 @@ export default function ContactPage() {
             <div>
               <ContactForm />
             </div>
-
-            <aside className="space-y-6 text-sm text-gray-700">
-              <div>
-                <h3 className="font-semibold text-lg mb-2">What we need</h3>
-                <p>Company details, current software, monthly transaction estimate, payroll headcount and any files (P&L, balance sheet, previous invoices) help us prepare an accurate estimate.</p>
-              </div>
-
-              <div>
-                <h3 className="font-semibold text-lg mb-2">What to expect</h3>
-                <ul className="list-disc pl-5">
-                  <li>We’ll review your submission and reply within 1–2 business days.</li>
-                  <li>We may request a short call to clarify scope.</li>
-                  <li>Quotes are non-binding until we finalize engagement details.</li>
-                </ul>
-              </div>
-
-              <div>
-                <h3 className="font-semibold text-lg mb-2">Security & Confidentiality</h3>
-                <p>Files you upload are stored securely. We’ll only use submitted data to prepare and deliver your quote.</p>
-              </div>
-            </aside>
           </div>
         </div>
       </div>
