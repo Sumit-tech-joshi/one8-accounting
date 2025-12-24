@@ -1,5 +1,5 @@
-import PostCard from "../../components/PostCard";
-import { supabaseAdmin } from "../../lib/supabaseAdmin";
+import PostCard from "../../../../components/PostCard";
+import { supabaseAdmin } from "../../../../lib/supabaseAdmin";
 
 export default async function Resources() {
   const res = await supabaseAdmin.from("posts").select("*").eq("published", true).order("published_at", { ascending: false });
