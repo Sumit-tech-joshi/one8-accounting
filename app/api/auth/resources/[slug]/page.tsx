@@ -1,5 +1,5 @@
-import { supabaseAdmin } from "../../../../../lib/supabaseAdmin";
-import Seo from "../../../../../components/Seo";
+import { supabaseAdmin } from "@/lib/supabaseAdmin";
+import Seo from "@/components/Seo";
 
 
 type Post = {
