@@ -154,7 +154,7 @@ export async function POST(req: Request) {
 
     if (insert.error) {
       console.error("DB insert error", insert.error);
-      return NextResponse.json({ error: "Database error" }, { status: 500 });
+      // return NextResponse.json({ error: "Database error" }, { status: 500 });
     }
     const submission = insert.data;
 
@@ -166,25 +166,24 @@ export async function POST(req: Request) {
       process.env.EMAIL_FROM
     ) {
       try {
-        const SITE_URL = process.env.SITE_URL ?? "https://yourdomain.com";
+        const SITE_URL = process.env.SITE_URL ?? "https://one8accounting.com";
         const to = process.env.EMAIL_TO!;
         const from = process.env.EMAIL_FROM!;
-
         const subject = `New Quote Request — ${firstName} ${lastName}`;
         const plain = `
-New quote request from ${firstName} ${lastName}
+          New quote request from ${firstName} ${lastName}
 
-Name: ${firstName} ${lastName}
-Email: ${email}
-Phone: ${phone}
-Company: ${company}
-Industry: ${industry}
-Message:
-${message}
+          Name: ${firstName} ${lastName}
+          Email: ${email}
+          Phone: ${phone}
+          Company: ${company}
+          Industry: ${industry}
+          Message:
+          ${message}
 
-File: ${fileUrl ?? "No attachment"}
-Site: ${SITE_URL}
-`.trim();
+          File: ${fileUrl ?? "No attachment"}
+          Site: ${SITE_URL}
+          `.trim();
 
         const html = `
           <div style="font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; color: #0f172a;">
@@ -212,13 +211,13 @@ Site: ${SITE_URL}
         await sgMail.send(msg);
         emailSent = true;
       } catch (err) {
-        console.error("SendGrid send error:", err);
+        console.error("SendGrid send error:", JSON.stringify(err));
         emailSent = false;
       }
     } else {
       console.warn("SendGrid or email env not configured; skipping email send");
     }
-    console.log({emailSent, submission})
+    console.log({ emailSent, submission });
     return NextResponse.json({ ok: true, emailSent, submission });
   } catch (err) {
     console.error("Contact route unexpected", err);
