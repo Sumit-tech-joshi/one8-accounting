@@ -335,7 +335,7 @@ export default function ContactForm() {
         </div> */}
       </div>
 
-      <div className="mt-6 flex items-center justify-between">
+      <div className="mt-6 flex items-center justify-end">
         {/* <div className="text-xs text-gray-600">
           By submitting you agree to our{" "}
           <a className="underline" href="/privacy">
