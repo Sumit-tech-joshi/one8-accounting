@@ -109,16 +109,15 @@ export default function ContactForm() {
 
     setSubmitting(true);
     try {
-
       const payload: ContactPayload = {
-  firstName: values.firstName,
-  lastName: values.lastName,
-  email: values.email,
-  phone: values.phone,
-  company: values.company,
-  industry: values.industry,
-  message: values.message,
-};
+        firstName: values.firstName,
+        lastName: values.lastName,
+        email: values.email,
+        phone: values.phone,
+        company: values.company,
+        industry: values.industry,
+        message: values.message,
+      };
 
       // const file = fileRef.current?.files?.[0] ?? null;
       // if (file) payload.file = file;
@@ -337,13 +336,13 @@ export default function ContactForm() {
       </div>
 
       <div className="mt-6 flex items-center justify-between">
-        <div className="text-xs text-gray-600">
+        {/* <div className="text-xs text-gray-600">
           By submitting you agree to our{" "}
           <a className="underline" href="/privacy">
             Privacy Policy
           </a>
           .
-        </div>
+        </div> */}
         <button
           type="submit"
           disabled={submitting}
