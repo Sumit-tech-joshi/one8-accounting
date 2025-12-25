@@ -1,7 +1,7 @@
 import { Router } from "express";
 // import { verifyRecaptcha } from "../services/recaptcha.service";
-import { sendContactEmail } from "../services/sendgrid.service";
-import { supabaseAdmin } from "../services/supabase.service";
+import { sendContactEmail } from "../services/sendgrid.service.js";
+import { supabaseAdmin } from "../services/supabase.service.js";
 
 const router = Router();
 
