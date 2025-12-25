@@ -22,6 +22,10 @@ type FormValues = {
   message: string;
 };
 
+type ContactPayload = FormValues & {
+  recaptchaToken?: string;
+};
+
 const industries = [
   "Construction & Trades",
   "eCommerce",
@@ -105,29 +109,31 @@ export default function ContactForm() {
 
     setSubmitting(true);
     try {
-      let fd: any = {};
-      fd.firstName = values.firstName;
-      fd.lastName = values.lastName;
-      fd.email = values.email;
-      fd.phone = values.phone;
-      fd.company = values.company;
-      fd.industry = values.industry;
-      fd.message = values.message;
 
-      const file = fileRef.current?.files?.[0] ?? null;
-      if (file) fd.file = file;
+      const payload: ContactPayload = {
+  firstName: values.firstName,
+  lastName: values.lastName,
+  email: values.email,
+  phone: values.phone,
+  company: values.company,
+  industry: values.industry,
+  message: values.message,
+};
 
-      const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
-      if (siteKey && window.grecaptcha?.execute) {
-        try {
-          const token = await window.grecaptcha.execute(siteKey, {
-            action: "submit",
-          });
-          fd.append("recaptchaToken", token);
-        } catch {
-          // ignore recaptcha failure on client — server will handle if secret is set
-        }
-      }
+      // const file = fileRef.current?.files?.[0] ?? null;
+      // if (file) payload.file = file;
+
+      // const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+      // if (siteKey && window.grecaptcha?.execute) {
+      //   try {
+      //     const token = await window.grecaptcha.execute(siteKey, {
+      //       action: "submit",
+      //     });
+      //     fd.append("recaptchaToken", token);
+      //   } catch {
+      //     // ignore recaptcha failure on client — server will handle if secret is set
+      //   }
+      // }
       const url = `${process.env.NEXT_PUBLIC_API_URL}?key=${process.env.NEXT_PUBLIC_API_URL_KEY}/api/contact`;
 
       const res = await fetch(url, {
@@ -135,7 +141,7 @@ export default function ContactForm() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(fd),
+        body: JSON.stringify(payload),
       });
 
       const json = await res.json();
