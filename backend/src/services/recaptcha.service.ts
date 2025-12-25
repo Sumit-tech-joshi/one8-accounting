@@ -3,6 +3,14 @@ export async function verifyRecaptcha(token: string | null) {
   if (!secret) return { ok: true, info: "skipped" };
   if (!token) return { ok: false, info: "missing token" };
 
+  type RecaptchaResponse = {
+  success: boolean;
+  score?: number;
+  action?: string;
+  challenge_ts?: string;
+  hostname?: string;
+  "error-codes"?: string[];
+};
   const res = await fetch(
     "https://www.google.com/recaptcha/api/siteverify",
     {
@@ -12,7 +20,7 @@ export async function verifyRecaptcha(token: string | null) {
     }
   );
 
-  const json = await res.json();
+  const json = (await res.json()) as RecaptchaResponse;
   if (json.success && typeof json.score === "number") {
     return { ok: json.score >= 0.3, info: `score=${json.score}` };
   }
