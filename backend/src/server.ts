@@ -9,7 +9,6 @@ import contactRoute from "./routes/contact.route";
 const app = express();
 app.use(cors());
 app.use(express.json());
-console.log('process.env.SUPABASE_URL  =. ', process.env.SUPABASE_URL)
 app.use("/api", contactRoute);
 
 const PORT = process.env.PORT || 3001;

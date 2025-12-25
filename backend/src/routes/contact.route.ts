@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { verifyRecaptcha } from "../services/recaptcha.service";
+// import { verifyRecaptcha } from "../services/recaptcha.service";
 import { sendContactEmail } from "../services/sendgrid.service";
 import { supabaseAdmin } from "../services/supabase.service";
 
@@ -17,17 +17,16 @@ router.post("/contact", async (req, res) => {
       message,
       recaptchaToken,
     } = req.body;
-    console.log({body: req.body })
     // validation (same as before)
     if (!firstName || !lastName || !email || !company || !industry) {
       return res.status(400).json({ error: "Missing required fields" });
     }
 
     // recaptcha
-    const rec = await verifyRecaptcha(recaptchaToken);
-    if (!rec.ok) {
-      return res.status(400).json({ error: "reCAPTCHA failed" });
-    }
+    // const rec = await verifyRecaptcha(recaptchaToken);
+    // if (!rec.ok) {
+    //   return res.status(400).json({ error: "reCAPTCHA failed" });
+    // }
 
     // DB insert
     const insert = await supabaseAdmin.from("contacts").insert({

@@ -139,7 +139,6 @@ export default function ContactForm() {
 
       const json = await res.json();
       if (!res.ok) throw new Error(json?.error || "Submission failed");
-      console.log({ json });
       setSuccess(
         "Thanks — your request has been submitted. We'll contact you soon."
       );
