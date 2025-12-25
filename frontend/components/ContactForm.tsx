@@ -105,17 +105,17 @@ export default function ContactForm() {
 
     setSubmitting(true);
     try {
-      const fd = new FormData();
-      fd.append("firstName", values.firstName);
-      fd.append("lastName", values.lastName);
-      fd.append("email", values.email);
-      fd.append("phone", values.phone);
-      fd.append("company", values.company);
-      fd.append("industry", values.industry);
-      fd.append("message", values.message);
+      let fd: any = {};
+      fd.firstName = values.firstName;
+      fd.lastName = values.lastName;
+      fd.email = values.email;
+      fd.phone = values.phone;
+      fd.company = values.company;
+      fd.industry = values.industry;
+      fd.message = values.message;
 
       const file = fileRef.current?.files?.[0] ?? null;
-      if (file) fd.append("file", file);
+      if (file) fd.file = file;
 
       const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
       if (siteKey && window.grecaptcha?.execute) {
@@ -129,10 +129,17 @@ export default function ContactForm() {
         }
       }
 
-      const res = await fetch("/api/contact", { method: "POST", body: fd });
+      const res = await fetch("http://localhost:3001/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(fd),
+      });
+
       const json = await res.json();
       if (!res.ok) throw new Error(json?.error || "Submission failed");
-      console.log({json})
+      console.log({ json });
       setSuccess(
         "Thanks — your request has been submitted. We'll contact you soon."
       );
