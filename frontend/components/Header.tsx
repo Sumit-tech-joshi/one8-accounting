@@ -82,8 +82,8 @@ export default function Header() {
       {open && (
         <div className="md:hidden border-t">
           <div className="px-6 py-4 flex flex-col gap-3">
-            {/* <Link href="/about">About</Link>
-            <Link href="/resources">Resources</Link> */}
+            <Link href="/about">About</Link>
+            {/* <Link href="/resources">Resources</Link> */}
             <div onClick={scrollToServices} >Services</div>
 
             <Link href="/contact" className="font-medium">
