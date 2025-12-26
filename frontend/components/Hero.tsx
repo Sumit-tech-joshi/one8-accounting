@@ -1,5 +1,6 @@
 import Image from "next/image";
 import HeroImage from "../public/home01.webp";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -19,12 +20,12 @@ export default function Hero() {
           </p>
 
           <div className="mt-8">
-            <a
+            <Link
               href="/contact"
               className="inline-block bg-slate-900 text-white px-5 py-3 rounded shadow hover:bg-slate-800 transition"
             >
               Get a Quote
-            </a>
+            </Link>
           </div>
         </div>
 
