@@ -133,7 +133,7 @@ export default function ContactForm() {
       //     // ignore recaptcha failure on client — server will handle if secret is set
       //   }
       // }
-      const url = `${process.env.NEXT_PUBLIC_API_URL}?key=${process.env.NEXT_PUBLIC_API_URL_KEY}/api/contact`;
+      const url = `${process.env.NEXT_PUBLIC_API_URL}/api/contact`;
 
       const res = await fetch(url, {
         method: "POST",

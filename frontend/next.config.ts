@@ -1,17 +1,9 @@
-// next.config.ts
 import type { NextConfig } from "next";
-import type { Configuration } from "webpack";
 
 const nextConfig: NextConfig = {
-  webpack: (config: Configuration) => {
-    config.resolve = {
-      ...(config.resolve ?? {}),
-      fallback: {
-        ...(config.resolve?.fallback ?? {}),
-        fs: false,
-      },
-    };
-    return config;
+  output: "export",
+  images: {
+    unoptimized: true, // required for static hosting
   },
 };
 
