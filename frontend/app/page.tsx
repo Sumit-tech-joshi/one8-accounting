@@ -29,11 +29,11 @@ export default function Home() {
       <section className="py-32 bg-slate-50">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl font-bold mb-4">Services</h2>
-          <p className="text-gray-600 mb-8 max-w-2xl">
-            Core financial operations delivered by experienced specialists. We
-            provide monthly bookkeeping, payroll, accounts payable,
-            controllership and fractional CFO services tailored for growing
-            businesses and nonprofits.
+          <p className="text-gray-600 mb-8">
+            Core financial operations handled by experienced specialists. We
+            provide reliable monthly bookkeeping, payroll, and
+            controllership services, tailored for growing businesses and
+            nonprofits.
           </p>
           <ServicesGrid />
         </div>
