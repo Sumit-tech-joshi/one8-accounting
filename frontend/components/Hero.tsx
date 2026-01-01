@@ -14,9 +14,9 @@ export default function Hero() {
             business
           </h1>
           <p className="mt-28 text-gray-600 max-w-xl">
-            Dedicated financial operations — bookkeeping, payroll,
-            controllership and CFO services — so you can focus on growth without
-            hiring a full-time finance team.
+            Dedicated bookkeeping, payroll, tax compliance & filing, and
+            controllership services—so you can focus on growth while we handle
+            the numbers.
           </p>
 
           <div className="mt-8">

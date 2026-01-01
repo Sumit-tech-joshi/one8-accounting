@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 export const metadata = {
   title: "One8 Accounting — Bookkeeping & Payroll Services",
   description:
-    "Expert bookkeeping, payroll, controllership, and CFO services for businesses and nonprofits.",
+    "Expert bookkeeping, payroll, and tax services designed to free founders to focus on growth.",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

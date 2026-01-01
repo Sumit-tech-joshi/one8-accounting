@@ -38,7 +38,7 @@ export default function Footer() {
           </div>
 
           <p className="text-sm text-slate-600 max-w-sm">
-            Expert bookkeeping, payroll and fractional CFO services that free founders to build.
+            Expert bookkeeping, payroll, and tax services designed to free founders to focus on growth.
           </p>
 {/* 
           <div className="flex items-center gap-4 mt-2">

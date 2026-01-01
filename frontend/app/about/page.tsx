@@ -3,7 +3,7 @@ import Image from "next/image";
 import Seo from "../../components/Seo";
 import ContactCta from "../../components/ContactCta";
 import aboutImage from "../../public/about-bg01.webp";
-import AboutHighlights from "../../components/AboutHighlights";
+// import AboutHighlights from "../../components/AboutHighlights";
 
 export const revalidate = 60;
 
@@ -89,6 +89,7 @@ export default function AboutPage() {
               <li>Payroll support and remittances</li>
               <li>GST and PST filings</li>
               <li>Year-end preparation and coordination</li>
+              <li>Tax filing services</li>
             </ul>
 
             {/* Approach */}
@@ -118,7 +119,7 @@ export default function AboutPage() {
         </div>
 
         {/* Highlights / Values / Stats */}
-        <AboutHighlights />
+        {/* <AboutHighlights /> */}
       </main>
     </>
   );
